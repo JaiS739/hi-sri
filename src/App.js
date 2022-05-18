@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Hello from './components/Hello';
+import Answer from './components/Answer';
+
+// jsx code xml inside JS
 
 function App() {
+
+  let info = [
+    {Name:"Sri", place:"Srikakulam"},
+    {Name:"Srinika", place:"Srikakulam"},
+    {Name:"Jai", place:"Indore"},
+
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+        <Hello> </Hello>
+       { info.map((user)=>(
+         <Answer {...user}/>
+        ))}       
+              
     </div>
   );
 }
